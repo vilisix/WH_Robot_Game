@@ -190,7 +190,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -260,11 +260,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -10
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.31598538, y: 0.3596048, z: -0.13088542, w: 0.8681629}
-  m_LocalPosition: {x: -1.41, y: 6.91, z: -1.32}
+  m_LocalPosition: {x: -3.82, y: 5.53, z: -3.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fb27c6c5a8148f7bd91aac800b7fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xLevelSize: 10
-  yLevelSize: 10
+  xLevelSize: 3
+  yLevelSize: 2
   floorTilePrefab: {fileID: 4445386706538552754, guid: 7507c1d07c892452581211a38157f7de,
     type: 3}
   StandartBoxPrefab: {fileID: 4445386706538552754, guid: f6f564bda58ca4c6aa9f956428cb914c,
@@ -337,6 +337,10 @@ MonoBehaviour:
     type: 3}
   SmallWallPrefab: {fileID: 4445386706538552754, guid: 463ad20bc765a44a08b21bffc1f90385,
     type: 3}
+  BigCornerWallPrefab: {fileID: 4445386706538552754, guid: 747e88e519c7a40cca76b92d55b8738f,
+    type: 3}
+  SmallCornerWallPrefab: {fileID: 4445386706538552754, guid: 8a070a4161bd0433e84c40700fa3b914,
+    type: 3}
   BoxReciever: {fileID: 4445386706538552754, guid: 6b7741249606f44f5905e3b9b43e63d5,
     type: 3}
   tileGap: 0.01
@@ -347,7 +351,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976244593}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.208213, y: 6.4186897, z: -7.6197634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

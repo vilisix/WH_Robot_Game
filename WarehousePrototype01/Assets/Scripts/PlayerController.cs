@@ -48,4 +48,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.3f);
         }
     }
+
+    public void DisablePlayerMovement() => canMove = false;
+    
 }

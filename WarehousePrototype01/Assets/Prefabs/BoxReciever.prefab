@@ -4799,36 +4799,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: robot-0-kolco trubu
       objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.577
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.939
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.17
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b35702f6dc9fe4526bbf637fdab06fe4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4884,6 +4854,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.577
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.939
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: b35702f6dc9fe4526bbf637fdab06fe4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35702f6dc9fe4526bbf637fdab06fe4, type: 3}
 --- !u!4 &1549635685660749903 stripped
@@ -4903,36 +4903,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: robot-1-truba
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.582
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.946
-      objectReference: {fileID: 0}
-    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1600002
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 526f25d14ef71433cb4bb88719101c3b,
         type: 3}
@@ -4988,6 +4958,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.582
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.946
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975033157549033438, guid: 526f25d14ef71433cb4bb88719101c3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 526f25d14ef71433cb4bb88719101c3b, type: 3}

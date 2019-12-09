@@ -31,8 +31,10 @@ public class LevelBuilder : MonoBehaviour
 
     private GameObject[,] tilesArray;
     private GameObject[,] objectsArray;
+    private GameObject[] wallsArray;
     private GameObject playerObject;
     private GameObject playerHeadObject;
+    private GameObject recieverObject;
     private int boxesCount;
     private int recievedBoxesCount;
     private int xPlayerPos;
@@ -44,12 +46,6 @@ public class LevelBuilder : MonoBehaviour
     {
         Physics.gravity *= -1;
         InitMap();
-        SpawnFloorTiles();
-        SpawnWalls();
-        SpawnBoxes();
-        SpawnPlayer();
-        SpawnBoxReciever();
-
     }
 
     //MethodsForLevelBuilder
@@ -59,6 +55,14 @@ public class LevelBuilder : MonoBehaviour
         boxesCount = xLevelSize * yLevelSize / 4;
         recievedBoxesCount = 0;
         objectsArray = new GameObject[xLevelSize, yLevelSize];
+        wallsArray = new GameObject[(xLevelSize+yLevelSize)*2 + 4];
+
+        SpawnFloorTiles();
+        AdjustCamera();
+        SpawnWalls();
+        SpawnBoxes();
+        SpawnPlayer();
+        SpawnBoxReciever();
     }
 
     private Vector3 FindCellPosition(int x, int y)
@@ -86,20 +90,28 @@ public class LevelBuilder : MonoBehaviour
 
     private void SpawnWalls()
     {
-        Instantiate(BigCornerWallPrefab, FindCellPosition(xLevelSize, yLevelSize), Quaternion.identity);
-        Instantiate(SmallCornerWallPrefab, FindCellPosition(-1, -1), Quaternion.Euler(0, 270, 0));
-        Instantiate(SmallCornerWallPrefab, FindCellPosition(xLevelSize, -1), Quaternion.Euler(0, 180, 0));
-        Instantiate(SmallCornerWallPrefab, FindCellPosition(-1, yLevelSize), Quaternion.Euler(0, 0, 0));
+        int wallCounter = 0;
+        wallsArray[wallCounter++] = Instantiate(BigCornerWallPrefab, FindCellPosition(xLevelSize, yLevelSize), Quaternion.identity);
+        wallsArray[wallCounter++] = Instantiate(SmallCornerWallPrefab, FindCellPosition(-1, -1), Quaternion.Euler(0, 270, 0));
+        wallsArray[wallCounter++] = Instantiate(SmallCornerWallPrefab, FindCellPosition(xLevelSize, -1), Quaternion.Euler(0, 180, 0));
+        wallsArray[wallCounter++] = Instantiate(SmallCornerWallPrefab, FindCellPosition(-1, yLevelSize), Quaternion.Euler(0, 0, 0));
+        Debug.Log(wallsArray.Length);
         for (int i = 0; i < xLevelSize; i++)
         {
             for (int j = 0; j < yLevelSize; j++)
             {
-                if (i == xLevelSize - 1)   Instantiate(BigWallPrefab,FindCellPosition(i+1, j),Quaternion.Euler(0,90,0));
-                if (j == yLevelSize - 1)   Instantiate(BigWallPrefab, FindCellPosition(i, j+1), Quaternion.identity);
-                if (i == 0) Instantiate(SmallWallPrefab, FindCellPosition(i - 1, j), Quaternion.Euler(0, 270, 0));
-                if (j == 0) Instantiate(SmallWallPrefab, FindCellPosition(i, j - 1), Quaternion.Euler(0, 180, 0));
+                if (i == xLevelSize - 1)  wallsArray[wallCounter++] = Instantiate(BigWallPrefab,FindCellPosition(i+1, j),Quaternion.Euler(0,90,0));
+                if (j == yLevelSize - 1) wallsArray[wallCounter++] = Instantiate(BigWallPrefab, FindCellPosition(i, j+1), Quaternion.identity);
+                if (i == 0) wallsArray[wallCounter++] = Instantiate(SmallWallPrefab, FindCellPosition(i - 1, j), Quaternion.Euler(0, 270, 0));
+                if (j == 0) wallsArray[wallCounter++] = Instantiate(SmallWallPrefab, FindCellPosition(i, j - 1), Quaternion.Euler(0, 180, 0));
             }
         }
+    }
+
+    private void AdjustCamera()
+    {
+        Transform camTranfsorm = GameObject.Find("Main Camera").GetComponent<Transform>();
+        camTranfsorm.position = FindCellPosition(xLevelSize / 2, yLevelSize / 2) + new Vector3(-4,5.5f,-4);
     }
 
     private void SpawnBoxes()
@@ -156,7 +168,7 @@ public class LevelBuilder : MonoBehaviour
                 if (objectsArray[i, j] == null)
                 {
                     Vector3 recieverPosition = FindCellPosition(i, j);
-                    Instantiate(BoxReciever, recieverPosition, Quaternion.identity);
+                    recieverObject = Instantiate(BoxReciever, recieverPosition, Quaternion.identity);
                     xRecieverPos = i;
                     yRecieverPos = j;
                     recieverSpawned = true;
@@ -239,6 +251,32 @@ public class LevelBuilder : MonoBehaviour
         GameObject flewAwayBox = playerHeadObject;
         playerHeadObject = null;
         Destroy(flewAwayBox, 2f);
+        if (recievedBoxesCount == boxesCount) Invoke("LevelPassed", 2f);
+    }
+
+    private void LevelPassed()
+    {
+        recieverObject.AddComponent<Rigidbody>();
+        Destroy(recieverObject, 3f);
+        PlayerController pc =  playerObject.GetComponent<PlayerController>();
+        pc.DisablePlayerMovement();
+        playerObject.AddComponent<Rigidbody>();
+        Destroy(playerObject, 3f);
+
+        Invoke("StartNewLevel", 4f);
+    }
+
+    private void StartNewLevel()
+    {
+        foreach (var tile in tilesArray) Destroy(tile);
+        foreach (var wall in wallsArray) Destroy(wall);
+        foreach (var obj in objectsArray) Destroy(obj);
+
+        if (xLevelSize < 4) xLevelSize = Random.Range(2, 7);
+        else xLevelSize = Random.Range(5, 10);
+        if (yLevelSize < 4) yLevelSize = Random.Range(2, 7);
+        else yLevelSize = Random.Range(5, 10);
+        InitMap();
     }
 
     private bool RightBoxUnderTube(int x, int y)
